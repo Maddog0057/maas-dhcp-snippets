@@ -1,0 +1,8 @@
+## NAME: PXE-Definitions
+## SCOPE: Global
+
+option space PXE; 
+   option PXE.discovery-control code 6 = unsigned integer 8; 
+   option PXE.boot-server code 8 = { unsigned integer 16, unsigned integer 8, ip-address }; 
+   option PXE.boot-menu code 9 = { unsigned integer 16, unsigned integer 8, text}; 
+   option PXE.menu-prompt code 10 = { unsigned integer 8, text };

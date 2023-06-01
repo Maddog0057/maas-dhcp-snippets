@@ -1,0 +1,11 @@
+## NAME: RaspberryPi4-PXE
+## SCOPE: SUBNET
+## SUBNET: 192.168.0.0/16
+
+option dhcp-parameter-request-list = concat(option dhcp-parameter-request-list,60,43);
+option vendor-class-identifier "PXEClient";
+    vendor-option-space PXE;
+        option PXE.discovery-control 3;
+        option PXE.boot-menu 0 17 "Raspberry Pi Boot";
+        option PXE.menu-prompt 0 "PXE";
+        next-server maas.server.ip.here;
